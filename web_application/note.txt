@@ -1,0 +1,2 @@
+use "npm install" in the client directory and "npm start" to start
+make sure you have node js / react js installed on your machine
