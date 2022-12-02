@@ -20,9 +20,9 @@ public class NoteController {
     }
 
     @PostMapping("/add")
-    public Integer add(@RequestBody Note note) {
+    public Note add(@RequestBody Note note) {
         Note newNote = noteService.saveNote(note);
-        return newNote.getId();
+        return newNote;
     }
 
     @DeleteMapping("/{id}")

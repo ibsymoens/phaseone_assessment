@@ -16,10 +16,7 @@ const TableView = () => {
         e.preventDefault();
         
         ApiRequests.createTask(task)
-                   .then(res => {
-                        task.id = res;
-                        dispatch(create_task(task));
-                   })
+                   .then(res => dispatch(create_task(res)))
                    .catch(err => console.log(err.message));    
         setTask(initialState);
     }

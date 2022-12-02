@@ -24,6 +24,7 @@ const CardView = () => {
                             title={task.title} 
                             desc={task.description} 
                             taskId={task.id}
+                            dateAndTime={task.dateAndTime}
                             handleDeleteTask={handleDeleteTask}
                         />
                     </Grid>

@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import { Card, CardContent, Typography, CardHeader, IconButton, Menu, MenuItem, ListItemIcon, ListItemText, Collapse } from "@mui/material";
 import { MoreVert as MoreVertIcon, Delete as DeleteIcon } from '@mui/icons-material';
 import { TransitionGroup } from 'react-transition-group';
+import moment from "moment";
 
-const CardViewContainer = ({ title, desc, taskId, handleDeleteTask }) => {
+const CardViewContainer = ({ title, desc, dateAndTime, taskId, handleDeleteTask }) => {
     const [anchorEl, setAnchorEl] = useState(null);
     const open = Boolean(anchorEl);
     const handleClick = (event) => setAnchorEl(event.currentTarget);
@@ -24,6 +25,7 @@ const CardViewContainer = ({ title, desc, taskId, handleDeleteTask }) => {
                         />
                         <CardContent>
                             <Typography variant="body2" color="text.secondary">{desc}</Typography>
+                            <Typography variant="body2" color="text.secondary" mt={2}>{`${moment(dateAndTime).format("MMMM d, YYYY - HH:mm:ss")}`}</Typography>
                         </CardContent>
                     </Card>
                     <Menu

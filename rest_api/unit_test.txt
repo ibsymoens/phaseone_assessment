@@ -1,8 +1,0 @@
-###ADD
-localhost:8080/api/add
-{
-	"text": "Hello World"
-}
-
-###GET ALL
-localhost:8080/api

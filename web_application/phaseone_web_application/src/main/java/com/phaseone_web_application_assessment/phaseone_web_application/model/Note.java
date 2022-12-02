@@ -4,6 +4,9 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import org.hibernate.annotations.CreationTimestamp;
+
+import java.util.Date;
 
 @Entity
 public class Note {
@@ -12,7 +15,8 @@ public class Note {
     private int id;
     private String title;
     private String description;
-
+    @CreationTimestamp
+    private Date dateAndTime;
     public Note() {
     }
 
@@ -29,7 +33,7 @@ public class Note {
     }
 
     public void setTitle(String title) {
-        this.title = title;
+        this.title = title.replaceAll("", " ").trim();
     }
 
     public String getDescription() {
@@ -37,6 +41,14 @@ public class Note {
     }
 
     public void setDescription(String description) {
-        this.description = description;
+        this.description = description.replaceAll("", " ").trim();
+    }
+
+    public Date getDateAndTime() {
+        return dateAndTime;
+    }
+
+    public void setDateAndTime(Date dateAndTime) {
+        this.dateAndTime = dateAndTime;
     }
 }
